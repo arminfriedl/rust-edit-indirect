@@ -1,0 +1,38 @@
+#+TITLE: Rust edit-indirect layer
+#+TAGS: general|layer|multi-paradigm|programming|rust
+
+[[file:img/rust.png]]
+
+* Table of Contents                                       :TOC_4_gh:noexport:
+- [[#description][Description]]
+- [[#install][Install]]
+- [[#key-bindings][Key bindings]]
+
+* Description
+This layer adds support for editing Rust comments with [[https://github.com/Fanael/edit-indirect][edit-indirect]]
+
+* Install
+To use this configuration layer, add it to your =~/.spacemacs=. You will need to
+add =rust-edit-indirect= to the existing =dotspacemacs-configuration-layers= list in this
+file.
+
+* Key bindings
+
+In a rust-mode buffer with point in a comment
+
+| Key Binding | Description                                     |
+|-------------+-------------------------------------------------|
+| ~SPC m ' '~ | Editing comment in an edit-indirect mode buffer |
+
+In a edit-indirect buffer
+
+| Key Binding | Description                                                |
+|-------------+------------------------------------------------------------|
+| ~SPC m ' c~ | Close edit-indirect buffer and save changes to rust buffer |
+| ~SPC m ' a~ | Close edit-indert buffer without saving the changes        |
+
+# Use GitHub URLs if you wish to link a Spacemacs documentation file or its heading.
+# Examples:
+# [[https://github.com/syl20bnr/spacemacs/blob/master/doc/VIMUSERS.org#sessions]]
+# [[https://github.com/syl20bnr/spacemacs/blob/master/layers/%2Bfun/emoji/README.org][Link to Emoji layer README.org]]
+# If space-doc-mode is enabled, Spacemacs will open a local copy of the linked file.
