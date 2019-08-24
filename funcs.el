@@ -29,8 +29,6 @@
 ;;; Inspired by antifuch's `asf-rustdoc-edit' [1], this is a complete rewrite.
 ;;; [1] https://gist.github.com/antifuchs/aa9fa4c3d1354ea163bc13e63d32db1a
 
-(require 'dash)
-
 ;; Start editing a rust comment in edit-indirect mode
 ;;
 ;; This is the only user facing function of rust-edit-indirect
@@ -73,21 +71,20 @@
 
 (defun rei--start-edit-indirect (matching-comment)
   "Get the comment block, set up edit-indirect buffer and open"
-  (-let ((prefix (plist-get matching-comment :prefix))
-         ((comment-start comment-end) (rei--comment-block-region matching-comment))
-         (edit-indirect-after-creation-hook #'rei--setup-buffer))
+  (-let* ((prefix (plist-get matching-comment :prefix))
+          ((comment-start comment-end) (rei--comment-block-region matching-comment))
+          (edit-indirect-after-creation-hook (lambda () (rei--setup-buffer prefix))))
 
     (edit-indirect-region comment-start comment-end 't)))
 
-(defun rei--setup-buffer ()
+(defun rei--setup-buffer (prefix)
   "Set up the `edit-indirect' buffer
-WARNING: This is a closure over a prefix! Do not use this as regular function
-
 * Set major mode to `markdown-mode'
 * Strip comment prefix"
 
   (markdown-mode)
-  (save-excursion 
+  (message "Prefix: %s" prefix)
+  (save-excursion
     ;; strip prefix
     (goto-char (point-min))
     (while (re-search-forward (concat prefix (rx (* blank))) 'nil 't)
@@ -97,8 +94,6 @@ WARNING: This is a closure over a prefix! Do not use this as regular function
 
 (defun rei--teardown-buffer ()
   "Tear down the `edit-indirect' buffer
-WARNING: This is a closure over a prefix! Do not use this as regular function
-
 * Add comment prefix
 * Clean up white space"
 

@@ -68,6 +68,6 @@ Each entry is either:
            (spacemacs/set-leader-keys-for-minor-mode 'edit-indirect--overlay "'c" 'edit-indirect-abort))))
 
 (defun rust-edit-indirect/post-init-rust-mode ()
-  (spacemacs/set-leader-keys-for-major-mode 'rust-mode "''" 'asf-rustdoc-edit))
+  (spacemacs/set-leader-keys-for-major-mode 'rust-mode "''" 'rust-edit-indirect))
 
 ;;; packages.el ends here
