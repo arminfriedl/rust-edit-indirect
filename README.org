@@ -20,9 +20,9 @@ file.
 
 In a rust-mode buffer with point in a comment
 
-| Key Binding | Description                                     |
-|-------------+-------------------------------------------------|
-| ~SPC m ' '~ | Editing comment in an edit-indirect mode buffer |
+| Key Binding  | Description                                     |
+|--------------+-------------------------------------------------|
+| ~SPC m ' '~  | Edit comment in an edit-indirect mode buffer    |
 
 In a edit-indirect buffer
 
