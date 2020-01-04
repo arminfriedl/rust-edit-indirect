@@ -28,8 +28,8 @@ In a edit-indirect buffer
 
 | Key Binding | Description                                                |
 |-------------+------------------------------------------------------------|
-| ~SPC m ' c~ | Close edit-indirect buffer and save changes to rust buffer |
-| ~SPC m ' a~ | Close edit-indert buffer without saving the changes        |
+| ~SPC m ' '~ | Close edit-indirect buffer and save changes to rust buffer |
+| ~SPC m ' c~ | Close edit-indirect buffer without saving the changes      |
 
 # Use GitHub URLs if you wish to link a Spacemacs documentation file or its heading.
 # Examples:

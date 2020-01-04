@@ -2,7 +2,7 @@
 
 ;;; MIT License
 ;;;
-;;; Copyright (c) 2019 Armin Friedl <armin.friedl@outlook.com>
+;;; Copyright (c) 2019 Armin Friedl <dev@friedl.net>
 ;;;
 ;;; Permission is hereby granted, free of charge, to any person obtaining a copy
 ;;; of this software and associated documentation files (the "Software"), to deal
